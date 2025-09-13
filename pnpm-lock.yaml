@@ -63,6 +63,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.19.2
         version: 1.19.2(hono@4.9.7)
+      '@hono/zod-validator':
+        specifier: ^0.7.2
+        version: 0.7.2(hono@4.9.7)(zod@4.1.8)
       hono:
         specifier: ^4.9.7
         version: 4.9.7
@@ -499,6 +502,12 @@ packages:
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
+
+  '@hono/zod-validator@0.7.2':
+    resolution: {integrity: sha512-ub5eL/NeZ4eLZawu78JpW/J+dugDAYhwqUIdp9KYScI6PZECij4Hx4UsrthlEUutqDDhPwRI0MscUfNkvn/mqQ==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.25.0 || ^4.0.0
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1407,6 +1416,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@4.1.8:
+    resolution: {integrity: sha512-5R1P+WwQqmmMIEACyzSvo4JXHY5WiAFHRMg+zBZKgKS+Q1viRa0C1hmUKtHltoIFKtIdki3pRxkmpP74jnNYHQ==}
+
 snapshots:
 
   '@babel/code-frame@7.27.1':
@@ -1715,6 +1727,11 @@ snapshots:
   '@hono/node-server@1.19.2(hono@4.9.7)':
     dependencies:
       hono: 4.9.7
+
+  '@hono/zod-validator@0.7.2(hono@4.9.7)(zod@4.1.8)':
+    dependencies:
+      hono: 4.9.7
+      zod: 4.1.8
 
   '@humanfs/core@0.19.1': {}
 
@@ -2598,3 +2615,5 @@ snapshots:
       yargs-parser: 21.1.1
 
   yocto-queue@0.1.0: {}
+
+  zod@4.1.8: {}

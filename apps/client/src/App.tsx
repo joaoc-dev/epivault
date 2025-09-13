@@ -1,6 +1,6 @@
 import './App.css';
 import { hc } from 'hono/client';
-import type { AppType } from '../../server/src/app';
+import type { AppType } from '@shared/api-types';
 import { useEffect, useState } from 'react';
 
 const client = hc<AppType>('http://localhost:3000/');

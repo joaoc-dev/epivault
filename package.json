@@ -13,5 +13,8 @@
   "devDependencies": {
     "concurrently": "^9.2.1",
     "tsx": "^4.20.5"
+  },
+  "dependencies": {
+    "zod": "^4.1.8"
   }
 }

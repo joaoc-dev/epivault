@@ -1,18 +1,18 @@
-import './App.css';
-import { hc } from 'hono/client';
 import type { AppType } from '@shared/api-types';
+import { hc } from 'hono/client';
 import { useEffect, useState } from 'react';
+import './App.css';
 
 const client = hc<AppType>('http://localhost:3000/');
 
-const getHello = async () => {
+async function getHello() {
   const res = await client.api.hello.$get({
     query: {
       name: 'John Doe',
     },
   });
   return await res.json();
-};
+}
 
 function App() {
   const [hello, setHello] = useState<string>('');

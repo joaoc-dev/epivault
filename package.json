@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "tsx index.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "pnpm --filter client run typecheck && pnpm --filter server run typecheck"
   },
   "dependencies": {
     "hono": "^4.9.7",

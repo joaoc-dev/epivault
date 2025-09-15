@@ -14,8 +14,6 @@
     "typecheck": "pnpm --filter client run typecheck && pnpm --filter server run typecheck"
   },
   "dependencies": {
-    "@t3-oss/env-core": "^0.13.8",
-    "hono": "^4.9.7",
     "zod": "^4.1.8"
   },
   "devDependencies": {

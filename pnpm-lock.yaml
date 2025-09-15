@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@t3-oss/env-core':
-        specifier: ^0.13.8
-        version: 0.13.8(typescript@5.8.3)(zod@4.1.8)
-      hono:
-        specifier: ^4.9.7
-        version: 4.9.7
       zod:
         specifier: ^4.1.8
         version: 4.1.8
@@ -42,6 +36,9 @@ importers:
 
   apps/client:
     dependencies:
+      '@t3-oss/env-core':
+        specifier: ^0.13.8
+        version: 0.13.8(typescript@5.8.3)(zod@4.1.8)
       hono:
         specifier: ^4.9.7
         version: 4.9.7
@@ -51,6 +48,9 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      zod:
+        specifier: ^4.1.8
+        version: 4.1.8
     devDependencies:
       '@types/react':
         specifier: ^19.1.10
@@ -76,9 +76,15 @@ importers:
       '@hono/zod-validator':
         specifier: ^0.7.2
         version: 0.7.2(hono@4.9.7)(zod@4.1.8)
+      '@t3-oss/env-core':
+        specifier: ^0.13.8
+        version: 0.13.8(typescript@5.8.3)(zod@4.1.8)
       hono:
         specifier: ^4.9.7
         version: 4.9.7
+      zod:
+        specifier: ^4.1.8
+        version: 4.1.8
     devDependencies:
       '@types/node':
         specifier: ^24.3.3

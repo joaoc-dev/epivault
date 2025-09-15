@@ -1,0 +1,37 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install -g pnpm && pnpm install
+
+      - name: Copy .env.example files
+        shell: bash
+        run: |
+          # Copy client .env.example to .env
+          if [ -f "apps/client/.env.example" ]; then
+            cp apps/client/.env.example apps/client/.env
+            echo "Copied apps/client/.env.example to apps/client/.env"
+          else
+            echo "Warning: apps/client/.env.example not found"
+          fi
+
+          # Copy server .env.example to .env
+          if [ -f "apps/server/.env.example" ]; then
+            cp apps/server/.env.example apps/server/.env
+            echo "Copied apps/server/.env.example to apps/server/.env"
+          else
+            echo "Warning: apps/server/.env.example not found"
+          fi
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint

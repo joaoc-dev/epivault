@@ -2,21 +2,27 @@
   "name": "server",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "esbuild --bundle --outfile=./dist/index.js --platform=node --target=node20 ./src/index.ts",
+    "dev": "tsx watch src/local-server.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check-env": "tsx src/check-env.ts",
+    "build": "run-s check-env bundle",
+    "bundle": "esbuild --bundle --outfile=./dist/index.js --platform=node --target=node20 ./src/index.ts",
     "zip": "zip -j lambda.zip dist/index.js",
     "update": "aws lambda update-function-code --zip-file fileb://lambda.zip --function-name hello",
     "deploy": "run-s build zip update"
   },
-  "devDependencies": {
-    "@types/node": "^24.3.3",
-    "esbuild": "^0.21.4",
-    "npm-run-all2": "^6.2.0",
-    "tsx": "^4.20.5"
-  },
   "dependencies": {
     "@hono/node-server": "^1.19.2",
     "@hono/zod-validator": "^0.7.2",
-    "hono": "^4.9.7"
+    "@t3-oss/env-core": "^0.13.8",
+    "hono": "^4.9.7",
+    "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "dotenv": "^17.2.2",
+    "esbuild": "^0.21.4",
+    "npm-run-all2": "^6.2.0",
+    "tsx": "^4.20.5"
   }
 }
